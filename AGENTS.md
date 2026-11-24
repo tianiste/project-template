@@ -60,8 +60,10 @@ account or repository settings, message other people, or publish credentials.
 - Commit small, often: commit each step as soon as it builds and push it right away, rather than
   batching a whole milestone into one push. Use `gh` for GitHub work (e.g. `gh run list` after a push).
   <!-- Alternative (SkyFlipper style): "Don't commit or push unless asked." -->
-- Message format: {{plain clear message | `type(scope): text`, lowercase, imperative, no trailing period;
-  types feat, fix, refactor, perf, docs, build, chore}}.
+- Message format: `type(scope): text`, lowercase, imperative, no trailing period, e.g.
+  `feat(api): add price fetcher`, `fix(store): keep old saves loading`, `docs(progress): record live check`.
+  Types: `feat`, `fix`, `refactor`, `perf`, `docs`, `build`, `chore`. The scope is the area changed
+  (a component, `docs`, `build`, ...). One concern per commit.
 
 ### One task per chat
 
