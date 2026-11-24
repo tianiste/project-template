@@ -1,0 +1,4 @@
+# Secrets and raw data
+.env
+.dev.vars
+service-data/
