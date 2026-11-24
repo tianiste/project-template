@@ -54,8 +54,8 @@ if (Test-Path (Join-Path $root '.git')) {
 Remove-Item -LiteralPath $PSCommandPath -Force
 
 Write-Host "Set up '$Name' (repo tianiste/$Repo)."
-Write-Host "Placeholders still to fill:"
-Select-String -Path (Join-Path $root 'AGENTS.md'), (Join-Path $root 'PROGRESS.md') -Pattern '\{\{[^}]+\}\}' -AllMatches |
+Write-Host "Placeholders still to fill in AGENTS.md (PROGRESS.md ones are filled as you work):"
+Select-String -Path (Join-Path $root 'AGENTS.md') -Pattern '\{\{[^}]+\}\}' -AllMatches |
     ForEach-Object { $_.Matches } | ForEach-Object { $_.Value } | Sort-Object -Unique | ForEach-Object { "  $_" }
 if (Test-Path (Join-Path $root '.git')) {
     Write-Host "Commit the README/.gitignore changes; AGENTS.md, CLAUDE.md and PROGRESS.md are now untracked local notes."
